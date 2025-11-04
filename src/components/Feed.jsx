@@ -41,22 +41,24 @@ function Tag({ label }) {
   );
 }
 
-export default function Feed() {
+export default function Feed({ onBrowseFiction, onBrowseNonFiction }) {
   return (
     <section id="feed" className="mx-auto max-w-7xl px-4 pb-20 pt-8 sm:px-6 lg:px-8">
-      <div className="mb-6 flex items-end justify-between">
+      <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
         <div>
           <h2 className="text-2xl font-bold text-yellow-100">Latest reflections</h2>
           <p className="mt-1 text-sm text-yellow-100/70">
             Everyone can read reflections. Create an account to post yours.
           </p>
         </div>
-        <a
-          href="#auth"
-          className="rounded-md border border-yellow-500/40 px-3 py-2 text-sm font-medium text-yellow-200 transition hover:bg-yellow-500/10"
-        >
-          Write a reflection
-        </a>
+        <div className="flex gap-2">
+          <button onClick={onBrowseFiction} className="rounded-md border border-yellow-500/40 px-3 py-2 text-sm font-medium text-yellow-200 transition hover:bg-yellow-500/10">
+            Browse Fiction
+          </button>
+          <button onClick={onBrowseNonFiction} className="rounded-md border border-yellow-500/40 px-3 py-2 text-sm font-medium text-yellow-200 transition hover:bg-yellow-500/10">
+            Browse Non-Fiction
+          </button>
+        </div>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
